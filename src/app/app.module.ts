@@ -7,7 +7,14 @@ import { AppComponent } from './app.component';
 import { CityComponent } from './city/city.component';
 import { ForecastComponent } from './forecast/forecast.component';
 
-import { WeatherService, WeatherServiceInMemory } from './weather.service';
+import { environment } from '../environments/environment';
+import { WeatherService } from './weather.service';
+import { YahooWeatherService, InMemoryYahooWeatherService } from './yahoo-weather.service';
+
+let providers: any[] = [];
+
+// add weather service provider according environment mode
+providers.push({ provide: WeatherService, useClass: environment.useInMemoryService ? InMemoryYahooWeatherService : YahooWeatherService});
 
 @NgModule({
   declarations: [
@@ -20,7 +27,7 @@ import { WeatherService, WeatherServiceInMemory } from './weather.service';
     FormsModule,
     HttpModule
   ],
-  providers: [{ provide: WeatherService, useClass: WeatherServiceInMemory}],
+  providers: providers,
   bootstrap: [AppComponent]
 })
 export class AppModule { }

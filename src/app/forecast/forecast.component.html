@@ -1,13 +1,11 @@
-<!--  <div class="forecast">-->
-  <div class="forecast-header">
-    <div class="day">{{forecast.date | date:"EE"}}</div>
+<div class="forecast-header">
+  <div class="day">{{forecast.date | date:"EE"}}</div>
+</div>
+<!-- .forecast-header -->
+<div class="forecast-content">
+  <div class="forecast-icon">
+    <img src='http://l.yimg.com/a/i/us/we/52/{{forecast.code}}.gif' alt="{{forecast.text}}" width=48>
   </div>
-  <!-- .forecast-header -->
-  <div class="forecast-content">
-    <div class="forecast-icon">
-      <img src='http://l.yimg.com/a/i/us/we/52/{{forecast.code}}.gif' alt="{{forecast.text}}" width=48>
-    </div>
-    <div class="degree">{{forecast.high.value}}<sup>o</sup></div>
-    <small>{{forecast.low.value}}<sup>o</sup></small>
-  </div>
-<!-- </div> -->
+  <div class="degree">{{forecast.high.value}}<sup>o</sup></div>
+  <small>{{forecast.low.value}}<sup>o</sup></small>
+</div>

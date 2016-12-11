@@ -1,9 +1,6 @@
-<div *ngIf="!weatherAtCity" class="forecast-table">
-  Select a city to load the forecast
-</div>
-<div *ngIf="weatherAtCity" class="forecast-table">
+<div class="forecast-table">
   <div class="container">
-    <div class="forecast-container">
+    <div class="forecast-container" *ngIf="weatherAtCity">
       <div class="today forecast">
         <div class="forecast-header">
           <div class="day">Today</div>
@@ -25,8 +22,15 @@
         </div>
       </div>
       <!-- forecast next days -->
-      <div class="forecast" *ngFor="let forecast of weatherAtCity.forecast.slice(1, 7)">
+      <div class="forecast" *ngFor="let forecast of weatherAtCity.forecast.slice(1, 4)">
         <app-forecast [forecast]="forecast"></app-forecast>
+      </div>
+    </div>
+    <div *ngIf="!weatherAtCity" class="forecast-container">
+      <div class="forecast">
+        <div class="forecast-header">
+          <div class="location">{{undefinedMessage}}</div>
+        </div>
       </div>
     </div>
   </div>

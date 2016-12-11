@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Attribute } from '@angular/core';
-import { WeatherAtCity  } from '../models/cweather';
+import { WeatherAtCity } from '../models/cweather';
 
 import { Weather, WeatherForecast } from '../models/weather';
 import { Location, City } from '../models/city';
@@ -18,7 +18,8 @@ export class CityComponent implements OnInit {
    * Wraps attribute databind in a property setter to trigger reload of
    * weather forecast
    */
-  @Input() set city (name: string) {
+  @Input() set city(name: string) {
+    this.weatherAtCity = undefined;
     this._cityName = name;
     this.loadForecastForSelectedCity();
   }
@@ -27,31 +28,31 @@ export class CityComponent implements OnInit {
   }
 
   weatherAtCity: WeatherAtCity = undefined;
-  private tmpErrorMessage: string = undefined;
+  private undefinedMessage: string = undefined;
 
-  constructor(private weatherService:WeatherService) { }
+  constructor(private weatherService: WeatherService) { }
 
   private loadForecastForSelectedCity() {
-      if (this._cityName) {
+    this.undefinedMessage = `Loading weather data for ${this._cityName}...`;
+    if (this._cityName) {
 
       console.log(`Loading weather data for ${this._cityName}`);
 
       this.weatherService.getWeatherData(this._cityName)
-        .then( (response: WeatherAtCity ) => this.weatherAtCity = response )
-        .catch ((error) => {
-          console.log (JSON.stringify(error));
+        .then((response: WeatherAtCity) => this.weatherAtCity = response)
+        .catch((error) => {
+          console.log(JSON.stringify(error));
           this.weatherAtCity = undefined;
           // TODO: push the error message into a toast
-          this.tmpErrorMessage = error.message || JSON.stringify(error);
-         });
-      } else {
-        this.weatherAtCity = undefined;
-      }
+          this.undefinedMessage = error.message || JSON.stringify(error);
+        });
+    } else {
+      this.weatherAtCity = undefined;
+    }
   }
 
   ngOnInit() {
-    /** Loads the forecast if a city is already selected */
-    this.loadForecastForSelectedCity();
+
   }
 
 }

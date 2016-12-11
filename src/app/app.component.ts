@@ -9,5 +9,5 @@ export class AppComponent {
   title = 'Weather forecast application assessment';
   locations: string[] = ['Rome, IT', 'Zug, CH', 'Vienna, AT'];
   selectedCity: string = this.locations[0];
-
+  mobileMenuHidden: boolean = true;
 }
