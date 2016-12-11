@@ -1,0 +1,149 @@
+{
+ "query": {
+  "count": 1,
+  "created": "2016-12-10T11:00:19Z",
+  "lang": "it",
+  "results": {
+   "channel": {
+    "units": {
+     "distance": "km",
+     "pressure": "mb",
+     "speed": "km/h",
+     "temperature": "C"
+    },
+    "title": "Yahoo! Weather - Vienna, Vienna, AT",
+    "link": "http://us.rd.yahoo.com/dailynews/rss/weather/Country__Country/*https://weather.yahoo.com/country/state/city-551801/",
+    "description": "Yahoo! Weather for Vienna, Vienna, AT",
+    "language": "en-us",
+    "lastBuildDate": "Sat, 10 Dec 2016 12:00 PM CET",
+    "ttl": "60",
+    "location": {
+     "city": "Vienna",
+     "country": "Austria",
+     "region": " Vienna"
+    },
+    "wind": {
+     "chill": "54",
+     "direction": "275",
+     "speed": "22.53"
+    },
+    "atmosphere": {
+     "humidity": "32",
+     "pressure": "33830.04",
+     "rising": "0",
+     "visibility": "25.91"
+    },
+    "astronomy": {
+     "sunrise": "7:36 am",
+     "sunset": "4:0 pm"
+    },
+    "image": {
+     "title": "Yahoo! Weather",
+     "width": "142",
+     "height": "18",
+     "link": "http://weather.yahoo.com",
+     "url": "http://l.yimg.com/a/i/brand/purplelogo//uh/us/news-wea.gif"
+    },
+    "item": {
+     "title": "Conditions for Vienna, Vienna, AT at 11:00 AM CET",
+     "lat": "48.202541",
+     "long": "16.368799",
+     "link": "http://us.rd.yahoo.com/dailynews/rss/weather/Country__Country/*https://weather.yahoo.com/country/state/city-551801/",
+     "pubDate": "Sat, 10 Dec 2016 11:00 AM CET",
+     "condition": {
+      "code": "28",
+      "date": "Sat, 10 Dec 2016 11:00 AM CET",
+      "temp": "12",
+      "text": "Mostly Cloudy"
+     },
+     "forecast": [
+      {
+       "code": "28",
+       "date": "10 Dec 2016",
+       "day": "Sat",
+       "high": "11",
+       "low": "5",
+       "text": "Mostly Cloudy"
+      },
+      {
+       "code": "28",
+       "date": "11 Dec 2016",
+       "day": "Sun",
+       "high": "6",
+       "low": "2",
+       "text": "Mostly Cloudy"
+      },
+      {
+       "code": "12",
+       "date": "12 Dec 2016",
+       "day": "Mon",
+       "high": "5",
+       "low": "0",
+       "text": "Rain"
+      },
+      {
+       "code": "30",
+       "date": "13 Dec 2016",
+       "day": "Tue",
+       "high": "0",
+       "low": "-2",
+       "text": "Partly Cloudy"
+      },
+      {
+       "code": "28",
+       "date": "14 Dec 2016",
+       "day": "Wed",
+       "high": "1",
+       "low": "0",
+       "text": "Mostly Cloudy"
+      },
+      {
+       "code": "30",
+       "date": "15 Dec 2016",
+       "day": "Thu",
+       "high": "1",
+       "low": "-2",
+       "text": "Partly Cloudy"
+      },
+      {
+       "code": "30",
+       "date": "16 Dec 2016",
+       "day": "Fri",
+       "high": "-1",
+       "low": "-4",
+       "text": "Partly Cloudy"
+      },
+      {
+       "code": "23",
+       "date": "17 Dec 2016",
+       "day": "Sat",
+       "high": "-1",
+       "low": "-4",
+       "text": "Breezy"
+      },
+      {
+       "code": "30",
+       "date": "18 Dec 2016",
+       "day": "Sun",
+       "high": "0",
+       "low": "-6",
+       "text": "Partly Cloudy"
+      },
+      {
+       "code": "30",
+       "date": "19 Dec 2016",
+       "day": "Mon",
+       "high": "1",
+       "low": "-5",
+       "text": "Partly Cloudy"
+      }
+     ],
+     "description": "<![CDATA[<img src=\"http://l.yimg.com/a/i/us/we/52/28.gif\"/>\n<BR />\n<b>Current Conditions:</b>\n<BR />Mostly Cloudy\n<BR />\n<BR />\n<b>Forecast:</b>\n<BR /> Sat - Mostly Cloudy. High: 11Low: 5\n<BR /> Sun - Mostly Cloudy. High: 6Low: 2\n<BR /> Mon - Rain. High: 5Low: 0\n<BR /> Tue - Partly Cloudy. High: 0Low: -2\n<BR /> Wed - Mostly Cloudy. High: 1Low: 0\n<BR />\n<BR />\n<a href=\"http://us.rd.yahoo.com/dailynews/rss/weather/Country__Country/*https://weather.yahoo.com/country/state/city-551801/\">Full Forecast at Yahoo! Weather</a>\n<BR />\n<BR />\n(provided by <a href=\"http://www.weather.com\" >The Weather Channel</a>)\n<BR />\n]]>",
+     "guid": {
+      "isPermaLink": "false"
+     }
+    }
+   }
+  }
+ }
+}

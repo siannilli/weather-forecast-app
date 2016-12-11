@@ -1,0 +1,149 @@
+{
+  "query": {
+    "count": 1,
+    "created": "2016-12-10T10:58:43Z",
+    "lang": "it",
+    "results": {
+      "channel": {
+        "units": {
+          "distance": "km",
+          "pressure": "mb",
+          "speed": "km/h",
+          "temperature": "C"
+        },
+        "title": "Yahoo! Weather - Rome, LZ, IT",
+        "link": "http://us.rd.yahoo.com/dailynews/rss/weather/Country__Country/*https://weather.yahoo.com/country/state/city-721943/",
+        "description": "Yahoo! Weather for Rome, LZ, IT",
+        "language": "en-us",
+        "lastBuildDate": "Sat, 10 Dec 2016 11:58 AM CET",
+        "ttl": "60",
+        "location": {
+          "city": "Rome",
+          "country": "Italy",
+          "region": " LZ"
+        },
+        "wind": {
+          "chill": "45",
+          "direction": "45",
+          "speed": "6.44"
+        },
+        "atmosphere": {
+          "humidity": "77",
+          "pressure": "34676.63",
+          "rising": "0",
+          "visibility": "25.91"
+        },
+        "astronomy": {
+          "sunrise": "7:28 am",
+          "sunset": "4:39 pm"
+        },
+        "image": {
+          "title": "Yahoo! Weather",
+          "width": "142",
+          "height": "18",
+          "link": "http://weather.yahoo.com",
+          "url": "http://l.yimg.com/a/i/brand/purplelogo//uh/us/news-wea.gif"
+        },
+        "item": {
+          "title": "Conditions for Rome, LZ, IT at 11:00 AM CET",
+          "lat": "41.898399",
+          "long": "12.4956",
+          "link": "http://us.rd.yahoo.com/dailynews/rss/weather/Country__Country/*https://weather.yahoo.com/country/state/city-721943/",
+          "pubDate": "Sat, 10 Dec 2016 11:00 AM CET",
+          "condition": {
+            "code": "32",
+            "date": "Sat, 10 Dec 2016 11:00 AM CET",
+            "temp": "7",
+            "text": "Sunny"
+          },
+          "forecast": [
+            {
+              "code": "30",
+              "date": "10 Dec 2016",
+              "day": "Sat",
+              "high": "14",
+              "low": "3",
+              "text": "Partly Cloudy"
+            },
+            {
+              "code": "28",
+              "date": "11 Dec 2016",
+              "day": "Sun",
+              "high": "15",
+              "low": "5",
+              "text": "Mostly Cloudy"
+            },
+            {
+              "code": "30",
+              "date": "12 Dec 2016",
+              "day": "Mon",
+              "high": "16",
+              "low": "6",
+              "text": "Partly Cloudy"
+            },
+            {
+              "code": "34",
+              "date": "13 Dec 2016",
+              "day": "Tue",
+              "high": "13",
+              "low": "2",
+              "text": "Mostly Sunny"
+            },
+            {
+              "code": "30",
+              "date": "14 Dec 2016",
+              "day": "Wed",
+              "high": "11",
+              "low": "1",
+              "text": "Partly Cloudy"
+            },
+            {
+              "code": "30",
+              "date": "15 Dec 2016",
+              "day": "Thu",
+              "high": "12",
+              "low": "3",
+              "text": "Partly Cloudy"
+            },
+            {
+              "code": "30",
+              "date": "16 Dec 2016",
+              "day": "Fri",
+              "high": "11",
+              "low": "4",
+              "text": "Partly Cloudy"
+            },
+            {
+              "code": "28",
+              "date": "17 Dec 2016",
+              "day": "Sat",
+              "high": "12",
+              "low": "2",
+              "text": "Mostly Cloudy"
+            },
+            {
+              "code": "30",
+              "date": "18 Dec 2016",
+              "day": "Sun",
+              "high": "11",
+              "low": "3",
+              "text": "Partly Cloudy"
+            },
+            {
+              "code": "30",
+              "date": "19 Dec 2016",
+              "day": "Mon",
+              "high": "12",
+              "low": "4",
+              "text": "Partly Cloudy"
+            }
+          ],
+          "description": "<![CDATA[<img src=\"http://l.yimg.com/a/i/us/we/52/32.gif\"/>\n<BR />\n<b>Current Conditions:</b>\n<BR />Sunny\n<BR />\n<BR />\n<b>Forecast:</b>\n<BR /> Sat - Partly Cloudy. High: 14Low: 3\n<BR /> Sun - Mostly Cloudy. High: 15Low: 5\n<BR /> Mon - Partly Cloudy. High: 16Low: 6\n<BR /> Tue - Mostly Sunny. High: 13Low: 2\n<BR /> Wed - Partly Cloudy. High: 11Low: 1\n<BR />\n<BR />\n<a href=\"http://us.rd.yahoo.com/dailynews/rss/weather/Country__Country/*https://weather.yahoo.com/country/state/city-721943/\">Full Forecast at Yahoo! Weather</a>\n<BR />\n<BR />\n(provided by <a href=\"http://www.weather.com\" >The Weather Channel</a>)\n<BR />\n]]>",
+          "guid": {
+            "isPermaLink": "false"
+          }
+        }
+      }
+    }
+  }
+}

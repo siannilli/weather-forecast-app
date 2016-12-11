@@ -1,3 +1,49 @@
-<h1>
-  {{title}}
-</h1>
+<div class="site-content">
+  <div class="site-header">
+    <div class="container">
+      <a href="index.html" class="branding">
+        <img src="assets/images/logo.png" alt="" class="logo">
+        <div class="logo-type">
+          <h1 class="site-title">Stefano Iannilli</h1>
+          <small class="site-description">Weather forecast app</small>
+        </div>
+      </a>
+
+      <!-- Default snippet for navigation -->
+      <div class="main-navigation">
+        <button type="button" class="menu-toggle"><i class="fa fa-bars"></i></button>
+        <ul class="menu">
+          <li class="menu-item" [class.current-menu-item]="selectedCity === item" *ngFor="let item of locations">
+            <a href="#" (click)="selectedCity = item">{{item}}</a>
+          </li>
+        </ul>
+        <!-- .menu -->
+      </div>
+      <!-- .main-navigation -->
+
+      <div class="mobile-navigation">
+        <ul class="menu">
+          <li class="menu-item" [class.current-menu-item]="selectedCity === item" *ngFor="let item of locations">
+            <a href="#" (click)="selectedCity = item">{{item}}</a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+  <!-- .site-header -->
+  <div class="hero" data-bg-image="assets/images/banner.png">
+    <div class="container">
+
+    </div>
+  </div>
+  <app-city [city]="selectedCity"></app-city>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p class="colophon">Responsive template by Themezy. All rights reserved</p>
+    </div>
+  </footer>
+  <!-- .site-footer -->
+
+</div>

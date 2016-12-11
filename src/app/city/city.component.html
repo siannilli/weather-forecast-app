@@ -1,0 +1,33 @@
+<div *ngIf="!weatherAtCity" class="forecast-table">
+  Select a city to load the forecast
+</div>
+<div *ngIf="weatherAtCity" class="forecast-table">
+  <div class="container">
+    <div class="forecast-container">
+      <div class="today forecast">
+        <div class="forecast-header">
+          <div class="day">Today</div>
+          <div class="date">{{weatherAtCity.current.date | date:"EEEE d"}}</div>
+        </div>
+        <!-- .forecast-header -->
+        <div class="forecast-content">
+          <div class="location">{{weatherAtCity.city.toString()}}</div>
+          <h2>{{weatherAtCity.current.text}}</h2>
+          <div class="degree">
+            <div class="num">{{weatherAtCity.current.temperature.value}}<sup>o</sup>{{weatherAtCity.current.temperature.unit}}</div>
+            <div class="forecast-icon">
+              <img src='http://l.yimg.com/a/i/us/we/52/{{weatherAtCity.current.code}}.gif' alt="" width=90>
+            </div>
+          </div>
+          <span><img src="assets/images/icon-umberella.png" alt="">{{weatherAtCity.current.humidity.value}}{{weatherAtCity.current.humidity.unit}}</span>
+          <span><img src="assets/images/icon-wind.png" alt="">{{weatherAtCity.current.wind.speed.value}}{{weatherAtCity.current.wind.speed.unit}}</span>
+          <span><img src="assets/images/icon-compass.png" alt="">{{weatherAtCity.current.wind.direction}}</span>
+        </div>
+      </div>
+      <!-- forecast next days -->
+      <div class="forecast" *ngFor="let forecast of weatherAtCity.forecast.slice(1, 7)">
+        <app-forecast [forecast]="forecast"></app-forecast>
+      </div>
+    </div>
+  </div>
+</div>

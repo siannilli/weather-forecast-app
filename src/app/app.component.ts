@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app works!';
+  title = 'Weather forecast application assessment';
+  locations: string[] = ['Rome, IT', 'Zug, CH', 'Vienna, AT'];
+  selectedCity: string = this.locations[0];
+
 }
