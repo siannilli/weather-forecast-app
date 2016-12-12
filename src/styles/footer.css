@@ -1,6 +1,6 @@
 
 .site-footer {
-  position: absolute;
+  position: fixed;
   height: auto;
   width: 100%;
   left: 0;
