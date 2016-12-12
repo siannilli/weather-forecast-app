@@ -1119,7 +1119,13 @@ form textarea {
   display: block;
 }
 
-progress {
+.alert-container {
+  padding-top: 3em;
+}
+.alert-container .error {
+  padding-top: 3em;
+}
+.alert-container progress {
   width: 100%;
   height: 5px;
 }
