@@ -1,54 +1,42 @@
-<div class="site-content">
-  <div class="site-header">
-    <div class="container">
-      <a href="index.html" class="branding">
-        <img src="assets/images/logo.png" alt="" class="logo">
-        <div class="logo-type">
-          <h1 class="site-title">Stefano Iannilli</h1>
-          <small class="site-description">Weather forecast app</small>
-        </div>
-      </a>
+<div class="site-header">
 
-      <!-- Default snippet for navigation -->
-      <div class="main-navigation">
-        <button type="button" class="menu-toggle" (click)="mobileMenuHidden = !mobileMenuHidden"><i class="fa fa-bars"></i></button>
-        <ul class="menu">
-          <li class="menu-item" [class.current-menu-item]="selectedCity === item" *ngFor="let item of locations">
-            <a href="#" (click)="selectedCity = item"><i>{{item}}</i></a>
-          </li>
-          <li class="menu-item">
-            <a href="#" class="menu-toggle more" href="#">...</a>
-          </li>
-        </ul>
-        <!-- .menu -->
-      </div>
-      <!-- .main-navigation -->
-
-      <div class="mobile-navigation" [class.hidden]="mobileMenuHidden">
-        <ul class="menu">
-          <li class="menu-item" [class.current-menu-item]="selectedCity === item" *ngFor="let item of locations">
-            <a href="#" (click)="selectedCity = item; mobileMenuHidden = !mobileMenuHidden">{{item}}</a>
-          </li>
-        </ul>
-      </div>
-
+  <a href="index.html" class="branding">
+    <img src="assets/images/logo.png" alt="" class="logo">
+    <div class="logo-type">
+      <h1 class="site-title">Stefano Iannilli</h1>
+      <small class="site-description">Weather forecast app</small>
     </div>
+  </a>
+
+  <!-- Default snippet for navigation -->
+  <nav class="main-navigation">
+    <button type="button" class="menu-toggle" (click)="mobileMenuHidden = !mobileMenuHidden"><i class="fa fa-bars"></i></button>
+    <div class="menu">
+      <ul>
+        <li class="menu-item" [class.current-menu-item]="selectedCity === item" *ngFor="let item of locations">
+          <a href="#" (click)="selectedCity = item">{{item}}</a>
+          <button href="#" class="trash" (click)="removeCity(item)"><i class="fa fa-times"></i></button>
+        </li>
+      </ul>
+      <button type="button" class="menu-more" (click)="mobileMenuHidden = !mobileMenuHidden"><i class="fa fa-plus"></i></button>
+    </div>
+
+    <!-- .menu -->
+  </nav>
+  <!-- .main-navigation -->
+
+  <nav class="mobile-navigation" [class.hidden]="mobileMenuHidden">
+    <ul class="menu">
+      <li class="menu-item" [class.current-menu-item]="selectedCity === item" *ngFor="let item of locations">
+        <a href="#" (click)="selectedCity = item; mobileMenuHidden = !mobileMenuHidden">{{item}}</a>
+      </li>
+    </ul>
+  </nav>
+
+</div>
+
+<div class="main-content">
+  <div class="forecast-table">
+    <app-city [city]="selectedCity"></app-city>
   </div>
-  <!-- .site-header -->
-  <div class="hero" data-bg-image="assets/images/banner.png">
-    <div class="container">
-
-    </div>
-  </div>
-
-  <app-city [city]="selectedCity"></app-city>
-
-  <main class="main-content"></main>
-  <footer class="site-footer">
-    <div class="container">
-      <p class="colophon">Responsive template by Themezy. All rights reserved</p>
-    </div>
-  </footer>
-  <!-- .site-footer -->
-
 </div>

@@ -1,0 +1,16 @@
+
+.site-footer {
+  position: absolute;
+  height: auto;
+  width: 100%;
+  left: 0;
+  background: #262936;
+  bottom: 0;
+  }
+
+  p.colophon {
+    padding: 1em;
+    font-size: small;
+  }
+
+
