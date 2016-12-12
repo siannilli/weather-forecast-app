@@ -23,6 +23,9 @@ export class CityComponent implements OnInit {
     this._cityName = name;
     this.loadForecastForSelectedCity();
   }
+
+  loading = false;
+
   get city(): string {
     return this._cityName;
   }
@@ -33,18 +36,22 @@ export class CityComponent implements OnInit {
   constructor(private weatherService: WeatherService) { }
 
   private loadForecastForSelectedCity() {
-    this.undefinedMessage = `Loading weather data for ${this._cityName}...`;
-    if (this._cityName) {
 
+    if (this._cityName) {
+      this.loading = true;
       console.log(`Loading weather data for ${this._cityName}`);
 
       this.weatherService.getWeatherData(this._cityName)
-        .then((response: WeatherAtCity) => this.weatherAtCity = response)
+        .then((response: WeatherAtCity) => {
+          this.weatherAtCity = response;
+          this.loading = false;
+        })
         .catch((error) => {
           console.log(JSON.stringify(error));
           this.weatherAtCity = undefined;
           // TODO: push the error message into a toast
           this.undefinedMessage = error.message || JSON.stringify(error);
+          this.loading = false;
         });
     } else {
       this.weatherAtCity = undefined;

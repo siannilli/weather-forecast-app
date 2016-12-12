@@ -1,3 +1,39 @@
+
+.find-box {
+  display: block;
+  padding-top: 3em;
+  padding-left: 1em;
+  margin-top: 10px;
+}
+
+.find-box .input-container {
+  width: 95%;
+  padding: .4em;
+  background: white;
+  border-radius: 20px;
+  font-size: 1em;
+}
+
+.find-box .input-container input {
+  border: none;
+  width: 70%;
+  font-size: small;
+}
+
+.find-box .input-container .validation-error {
+  color: darkred;
+  float: right;
+  font-size: smaller;
+  margin: auto;
+  padding: 10px;
+}
+
+@media screen and (max-width: 590px){
+  .find-box .input-container .validation-error{
+    color: orange;
+  }
+}
+
 .forecast-table {
   display: block;
   padding: 1em;

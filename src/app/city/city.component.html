@@ -24,10 +24,11 @@
     <app-forecast [forecast]="forecast"></app-forecast>
   </div>
 </div>
-<div *ngIf="!weatherAtCity" class="forecast-container">
-  <div class="forecast">
-    <div class="forecast-header">
-      <div class="location">{{undefinedMessage}}</div>
+<div *ngIf="!weatherAtCity" class="main-container">
+    <div *ngIf="loading">
+        <progress></progress>
+        <span>Loading weather data for {{city}}...</span>
+
     </div>
-  </div>
+    <span *ngIf="!loading">{{undefinedMessage}}</span>
 </div>

@@ -13,4 +13,9 @@ export class WeatherService {
   getWeatherData(cityName: string, forecast_days?: number): Promise<WeatherAtCity> {
     return null;
   }
+
+  normalizeCityName(cityName: string): Promise<string> {
+    return null;
+  }
+
 }

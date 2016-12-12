@@ -14,7 +14,10 @@ import { YahooWeatherService, InMemoryYahooWeatherService } from './yahoo-weathe
 let providers: any[] = [];
 
 // add weather service provider according environment mode
-providers.push({ provide: WeatherService, useClass: environment.useInMemoryService ? InMemoryYahooWeatherService : YahooWeatherService});
+providers.push({
+  provide: WeatherService,
+  useClass: environment.useInMemoryService && !environment.production ?
+    InMemoryYahooWeatherService : YahooWeatherService});
 
 @NgModule({
   declarations: [

@@ -15,22 +15,34 @@
       <ul>
         <li class="menu-item" [class.current-menu-item]="selectedCity === item" *ngFor="let item of locations">
           <a href="#" (click)="selectedCity = item">{{item}}</a>
-          <button href="#" class="trash" (click)="removeCity(item)"><i class="fa fa-times"></i></button>
+          <button href="#" class="trash" (click)="removeCity(item)"><i class="fa fa-trash-o"></i></button>
         </li>
       </ul>
-      <button type="button" class="menu-more" (click)="mobileMenuHidden = !mobileMenuHidden"><i class="fa fa-plus"></i></button>
     </div>
 
     <!-- .menu -->
   </nav>
   <!-- .main-navigation -->
 
+  <div class="find-box" *ngIf="locations.length < 3">
+    <form #newCityForm="ngForm" (ngSubmit)="addNew(newCity)">
+      <div class="input-container">
+        <i class="fa fa-search"></i>
+        <input #newCity="ngModel" ngModel name="newCity" type="text" placeholder="Add your location...">
+        <span class="validation-error">{{validationError}}</span>
+      </div>
+    </form>
+  </div>
+
   <nav class="mobile-navigation" [class.hidden]="mobileMenuHidden">
-    <ul class="menu">
-      <li class="menu-item" [class.current-menu-item]="selectedCity === item" *ngFor="let item of locations">
-        <a href="#" (click)="selectedCity = item; mobileMenuHidden = !mobileMenuHidden">{{item}}</a>
-      </li>
-    </ul>
+    <div class="menu">
+      <ul>
+        <li class="menu-item" [class.current-menu-item]="selectedCity === item" *ngFor="let item of locations">
+          <a href="#" (click)="selectedCity = item; mobileMenuHidden = !mobileMenuHidden">{{item}}</a>
+          <button href="#" class="trash" (click)="removeCity(item); mobileMenuHidden = !mobileMenuHidden"><i class="fa fa-trash-o"></i></button>
+        </li>
+      </ul>
+    </div>
   </nav>
 
 </div>

@@ -6,6 +6,7 @@
   height: 100%;
   display: block;
   padding-top: 2em;
+  margin-bottom: 10px;
   }
   .site-header .branding {
     float: left; }
@@ -99,7 +100,7 @@
         border-color: #009ad8;
         color: #009ad8; }
 
-      .main-navigation .menu ul .menu-item button.trash {
+      .main-navigation .menu ul .menu-item button.trash, .mobile-navigation .menu ul .menu-item button.trash  {
         background: none;
         color: white;
         border: none;
@@ -108,12 +109,20 @@
         margin-left:11px;
         margin-top: 2px;
       }
-      .main-navigation .menu ul .menu-item button.trash:hover {
+
+      .mobile-navigation .menu ul .menu-item button.trash {
+        margin-left: 0px;
+        margin-right: 14px;
+        margin-top: -30px;
+      }
+
+      .main-navigation .menu ul .menu-item button.trash:hover, .mobile-navigation .menu ul .menu-item button.trash:hover {
         color: #009ad8;
       }
 
+
 .mobile-navigation {
-  padding: 30px 0 0;
+  padding: 20px 0 0;
   clear: both;
   display: block; }
   .mobile-navigation.hidden {
@@ -129,7 +138,7 @@
     border-radius: 10px;
     overflow: hidden; }
     .mobile-navigation .menu a {
-      padding: 20px;
+      padding: 9px;
       display: block;
       color: white; }
     .mobile-navigation .menu .menu-item {

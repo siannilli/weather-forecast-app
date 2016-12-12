@@ -23,7 +23,7 @@ export abstract class BaseYahooWeatherService implements WeatherService {
    */
   protected parseRemoteResponse(remoteResponse: any): WeatherAtCity {
     if (!(remoteResponse && remoteResponse.query && remoteResponse.query.results)) {
-      throw { message: 'Wrong response from weather service. Switch to another city, then try again.' };
+      throw { message: 'Wrong response from weather service. Try again.' };
     }
 
     // shortcuts to json parts
@@ -80,6 +80,13 @@ export abstract class BaseYahooWeatherService implements WeatherService {
     return retObj;
   }
 
+  /**
+   * Check if typed city name is valid for the weather service
+   */
+  normalizeCityName(city: string): Promise<string> {
+    return null;
+  }
+
 }
 
 /**
@@ -87,7 +94,7 @@ export abstract class BaseYahooWeatherService implements WeatherService {
  */
 @Injectable()
 export class YahooWeatherService extends BaseYahooWeatherService {
-  private cache: {[key: string]: WeatherAtCity} = { };
+  private cache: { [key: string]: WeatherAtCity } = {};
 
   readonly YAHOO_WHEATHER_SERVICE_URL = 'https://query.yahooapis.com/v1/public/yql?q={q}&format=json';
   constructor(private http: Http) { super(); }
@@ -111,6 +118,34 @@ export class YahooWeatherService extends BaseYahooWeatherService {
       })
       .toPromise();
   }
+
+  normalizeCityName(cityName: string): Promise<string> {
+    // response is not in cache or cache expired, calling the remote service
+    let yql = `select name, country from geo.places(1) where text="${cityName}"`;
+
+    return this.http.get(this.YAHOO_WHEATHER_SERVICE_URL.replace('{q}', yql))
+      .map(res => {
+        let result = this.extractNormalizedCity(res.json());
+        if (result) {
+          return result;
+        }
+
+        throw { message: `Cannot find city ${cityName}` };
+      })
+      .toPromise();
+  }
+
+  /**
+   * return city name from
+   */
+  private extractNormalizedCity(document: any): string {
+    if (document.query && document.query.results && document.query.results.place) {
+      return `${document.query.results.place.name},  ${document.query.results.place.country.code}`;
+    }
+
+    return null;
+  }
+
 }
 
 /**
@@ -146,6 +181,15 @@ export class InMemoryYahooWeatherService extends BaseYahooWeatherService {
     this.serviceData['Rome, IT'] = require('../json/forecast-rome.json');
     this.serviceData['Vienna, AT'] = require('../json/forecast-vienna.json');
     this.serviceData['Zug, CH'] = require('../json/forecast-zug.json');
+  }
+
+  normalizeCityName(city: string): Promise<string> {
+    for (let key in this.serviceData) {
+      if (key.startsWith(city)) {
+        return Promise.resolve(key);
+      }
+    }
+    return Promise.reject({ message: `Cannot find city ${city}` });
   }
 
 }
