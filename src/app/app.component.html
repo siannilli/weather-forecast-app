@@ -1,7 +1,7 @@
 <div class="site-header">
 
   <a href="index.html" class="branding">
-    <img src="assets/images/logo.png" alt="" class="logo">
+    <img src="assets/images/logo.png" alt="cloud" class="logo">
     <div class="logo-type">
       <h1 class="site-title">Stefano Iannilli</h1>
       <small class="site-description">Weather forecast app</small>
@@ -28,7 +28,7 @@
     <form #newCityForm="ngForm" (ngSubmit)="addNew(newCity)">
       <div class="input-container">
         <i class="fa fa-search"></i>
-        <input #newCity="ngModel" ngModel name="newCity" type="text" placeholder="Add your location...">
+        <input #newCity="ngModel" ngModel name="newCity" type="text" placeholder="Add your location..." />
         <span class="validation-error">{{validationError}}</span>
       </div>
     </form>

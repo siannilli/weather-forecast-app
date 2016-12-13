@@ -23,6 +23,8 @@ export abstract class BaseYahooWeatherService implements WeatherService {
    */
   protected parseRemoteResponse(remoteResponse: any): WeatherAtCity {
     if (!(remoteResponse && remoteResponse.query && remoteResponse.query.results)) {
+      console.error(`Error from remote service:\n${JSON.stringify(remoteResponse)}`);
+      console.error(remoteResponse); // output the object, the console will rendere as a browsable object
       throw { message: 'Wrong response from weather service. Try again.' };
     }
 
@@ -96,7 +98,12 @@ export abstract class BaseYahooWeatherService implements WeatherService {
 export class YahooWeatherService extends BaseYahooWeatherService {
   private cache: { [key: string]: WeatherAtCity } = {};
 
-  readonly YAHOO_WHEATHER_SERVICE_URL = 'https://query.yahooapis.com/v1/public/yql?q={q}&format=json';
+  readonly YAHOO_WHEATHER_SERVICE_URL =
+    'https://query.yahooapis.com/v1/public/yql?q={q}' +
+       '&format=json' +
+       '&diagnostics=true' +
+       '&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys';
+
   constructor(private http: Http) { super(); }
 
   getWeatherData(cityName: string, forecast_days?: number): Promise<WeatherAtCity> {

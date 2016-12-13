@@ -12,7 +12,7 @@ export class WeatherAtCity {
   forecast: WeatherForecast[] = []; // initialize to an empty array
 
   expired(): boolean {
-    return (this.created.valueOf() + (this.ttl * 6000) < Date.now().valueOf());
+    return (Date.now().valueOf() - this.created.valueOf() > (this.ttl * 6000));
   }
 
 }

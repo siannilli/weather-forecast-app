@@ -10,6 +10,7 @@ import { ForecastComponent } from './forecast/forecast.component';
 import { environment } from '../environments/environment';
 import { WeatherService } from './weather.service';
 import { YahooWeatherService, InMemoryYahooWeatherService } from './yahoo-weather.service';
+import { DegreesToCompassPipe } from './degrees2compass.pipe';
 
 let providers: any[] = [];
 
@@ -23,7 +24,8 @@ providers.push({
   declarations: [
     AppComponent,
     CityComponent,
-    ForecastComponent
+    ForecastComponent,
+    DegreesToCompassPipe
   ],
   imports: [
     BrowserModule,

@@ -16,7 +16,7 @@
       </div>
       <span><img src="assets/images/icon-umberella.png" alt="">{{weatherAtCity.current.humidity.value}}{{weatherAtCity.current.humidity.unit}}</span>
       <span><img src="assets/images/icon-wind.png" alt="">{{weatherAtCity.current.wind.speed.value}}{{weatherAtCity.current.wind.speed.unit}}</span>
-      <span><img src="assets/images/icon-compass.png" alt="">{{weatherAtCity.current.wind.direction}}</span>
+      <span><img src="assets/images/icon-compass.png" alt="">{{weatherAtCity.current.wind.direction | degreesTocompass }}</span>
     </div>
   </div>
   <!-- forecast next days -->

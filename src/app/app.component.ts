@@ -21,6 +21,9 @@ export class AppComponent {
    */
   constructor(private weatherService: WeatherService) { }
 
+  /**
+   * handles delete city command removing the city name from locations array
+   */
   removeCity(cityName) {
     let idx = this.locations.findIndex(item => item === cityName);
     if (idx >= 0) {
@@ -29,6 +32,11 @@ export class AppComponent {
 
   }
 
+  /**
+   * validates city name currently typed into the find location input box.
+   * if the city name matches with the results from the configured remote service
+   *  the city name is pushed into the locations array and selected to load weather data
+   */
   addNew(input: FormControl) {
     // Check if it's a valid name
     this.weatherService.normalizeCityName(input.value)
