@@ -46,6 +46,8 @@ WeatherForecastApp comes with some `npm` scripts as shortcuts to build processes
 | `build:prod`   | build the application for production environments 
 | `build:docker` | build the application for pr environments and build a ngnix's Docker image to host the application. 
 
+For example, run the command `npm run build:prod` to build the web application with production settings.
+Run `npm run build:docker` to build the web application with production settings, and build a Docker image for a ready-to-run instance of nginx server, serving the web application. 
 
 ## Deploy
 
