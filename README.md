@@ -69,3 +69,6 @@ $ docker run --name weather-app -p 8080:80 -d weather-forecast-image
 ```
 
 Then browse the weather forecast application at the url `http://localhost:8080`.
+
+## Credits
+Application layout is freely inspired to [Themezy Still Weather Website Template](https://www.themezy.com/free-website-templates/128-steel-weather-free-responsive-website-template)
