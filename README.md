@@ -2,30 +2,65 @@
 
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.22-1.
 
+## Install application into a development machine or a build server
+Clone application project from Github with following commands
+
+<code>
+$ git clone https://github.com/siannilli/weather-forecast-app.git <BR/>
+$ npm install 
+</code>
+
 ## Development server
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+Run `ng serve -prod` for a dev server running with production settings.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive/pipe/service/class`.
+## Settings
+Folder `src/environments` contains environment file settings.
+For development, the application uses an in-memory service with static forecast data (updated asof 10th December 2016).
+
+To use Yahoo! Weather service change `useInMemoryService` setting to `true` in file `src/environments/environment.ts`, as per the following example. 
+
+<code>
+export const environment = {
+  production: false,
+  useInMemoryService: true
+};
+</code>
+
+In production mode the application (`ng serve -prod`) always uses Yahoo! Weather API.
 
 ## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
 
-## Running unit tests
+WeatherForecastApp comes with some `npm` scripts as shortcuts to build processes.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+| script         |  description                       |
+|----------------|:---------------------------------------------------------|
+| `start`        | start a light web server serving the applciation.       
+| `clean:dist`   | delete the ./dist folder |
+| `clean:all`    | delete ./dist and ./node_modules folders 
+| `build:dev`    | build the application for development environments
+| `build:prod`   | build the application for production environments 
+| `build:docker` | build the application for pr environments and build a ngnix's Docker image to host the application. 
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
+## Deploy
 
-## Deploying to Github Pages
+### Manual deployment
+Follow [build instructions](#Build) above to build the application according the environment you are setting up.
+Each `build:*` script compiles the source files into the `./dist` folder.
 
-Run `ng github-pages:deploy` to deploy to Github Pages.
+Copy the content under `./dist` folder to the folder with static assets served by your running web server (eg. /usr/share/nginx/html in a default nginx instance). 
 
-## Further help
+Browse the web application according the URL address listening by the web server.
 
-To get more help on the `angular-cli` use `ng --help` or go check out the [Angular-CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+### Deploy as Docker container
+The script `build:docker` generates a Docker image with name `weather-forecast-app`, ready to run an nginx server instance service the web application.
+
+To run a docker container of that image, and start the nginx server listening on port 8080 run the following commmand:
+
+`$ docker run --name weather-app -p 8080:80 -d weather-forecast-app`
+
+Then browse the weather forecast application at the url `http://localhost:8080`.

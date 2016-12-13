@@ -8,7 +8,12 @@
     "lint": "tslint \"src/**/*.ts\"",
     "test": "ng test",
     "pree2e": "webdriver-manager update",
-    "e2e": "protractor"
+    "e2e": "protractor",
+    "clean:dist" : "rm -Rf ./dist",
+    "clean:all": "rm -Rf ./dist && rm -Rf ./node_modules", 
+    "build:dev": "ng build",
+    "build:prod": "ng build -prod",
+    "build:docker": "npm run build:prod && docker build -t weather-forecast-image ."
   },
   "private": true,
   "dependencies": {
