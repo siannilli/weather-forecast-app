@@ -5,9 +5,11 @@ This project was generated with [angular-cli](https://github.com/angular/angular
 ## Install application into a development machine or a build server
 Clone application project from Github with following commands
 
-<code>
-$ git clone https://github.com/siannilli/weather-forecast-app.git && npm install 
-</code>
+```bash
+$ git clone https://github.com/siannilli/weather-forecast-app.git 
+$ cd weather-forecast-app
+$ npm install 
+```
 
 ## Development server
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
@@ -20,12 +22,12 @@ In development mode, the application uses an in-memory service with static forec
 
 To use Yahoo! Weather service change `useInMemoryService` setting to `true` in file `src/environments/environment.ts`, as per the following example. 
 
-<code>
+```typescript
 export const environment = {
   production: false,
   useInMemoryService: true
 };
-</code>
+```
 
 In production mode, the application (`ng serve -prod`) always uses the Yahoo! Weather API to get forecast data.
 
@@ -60,6 +62,8 @@ The script `build:docker` generates a Docker image with the name `weather-foreca
 
 To run a docker container of the image, and start the nginx server instance listening on port 8080, run the following commmand:
 
-`$ docker run --name weather-app -p 8080:80 -d weather-forecast-app`
+```bash
+$ docker run --name weather-app -p 8080:80 -d weather-forecast-app
+```
 
 Then browse the weather forecast application at the url `http://localhost:8080`.
