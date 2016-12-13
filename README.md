@@ -3,7 +3,7 @@
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.22-1.
 
 ## Install application into a development machine or a build server
-Clone application project from Github with following commands
+Clone the application project from Github with following commands
 
 ```bash
 $ git clone https://github.com/siannilli/weather-forecast-app.git 
