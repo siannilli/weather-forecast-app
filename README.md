@@ -3,7 +3,7 @@
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.22-1.
 
 ## Install application into a development machine or a build server
-Clone application project from Github with following commands
+Clone the application project from Github with following commands
 
 ```bash
 $ git clone https://github.com/siannilli/weather-forecast-app.git 
@@ -58,12 +58,12 @@ Copy the content under `./dist` folder to the folder with static assets served b
 Browse the web application according the URL address listening by the web server.
 
 ### Deploy as Docker container
-The script `build:docker` generates a Docker image with the name `weather-forecast-app`, ready to run an nginx server instance serving the web application.
+The script `build:docker` builds a Docker image `weather-forecast-image`, ready to run an nginx server instance, serving the web application.
 
-To run a docker container of the image, and start the nginx server instance listening on port 8080, run the following commmand:
+To run a docker container with that image, and start the nginx server instance listening on port 8080, run the following commmand:
 
 ```bash
-$ docker run --name weather-app -p 8080:80 -d weather-forecast-app
+$ docker run --name weather-app -p 8080:80 -d weather-forecast-image
 ```
 
 Then browse the weather forecast application at the url `http://localhost:8080`.
